@@ -6,12 +6,12 @@
 
 ### Overview
 
-Software engineer specializing in the intersection of non-deterministic systems (LLMs) and deterministic backend infrastructure. 
+Software engineer specializing in the intersection of non-deterministic systems and deterministic backend infrastructure. 
 
 My work focuses on:
 - Designing stateful, cyclic agent architectures with checkpointed persistence.
 - Safe execution environments for untrusted, model-generated code (SAST + OS-level isolation).
-- Quantitative system evaluation (LLM Evals) to measure agentic self-healing, pass rates, and security boundaries.
+- Quantitative system evaluation to measure agentic self-healing, pass rates, and security boundaries.
 
 ---
 
@@ -22,7 +22,7 @@ An asynchronous distributed system designed for automated Python code synthesis,
 
 * **Decoupled Architecture:** Event-driven backend built with FastAPI, Taskiq, and Redis, separating heavy LLM generation tasks and container operations from the core API layer.
 * **Stateful Graph Orchestration:** LangGraph-based state machine with AST parsing, pre-execution SAST auditing via Semgrep, automated test generation, and an iterative self-healing loop driven by parsed runtime tracebacks.
-* **Security & Isolation:** Ephemeral Docker containers strictly isolated at the OS level (`--network none`, 128MB RAM, restricted CPU quotas, PID exhaustion limits). Implements a stateful Human-in-the-Loop (HITL) gate for pre-execution code inspection.
+* **Security & Isolation:** Ephemeral Docker containers strictly isolated at the OS level (`--network none`, 256MB RAM, restricted CPU quotas, PID exhaustion limits). Implements a stateful Human-in-the-Loop gate for pre-execution code inspection.
 * **Empirical Validation:**
   - **OpenAI HumanEval:** Reached **100.0% Pass@Final** with a verified **+10.0% lift** produced entirely by the automated reflection/repair cycle.
   - **Adversarial Security Suite:** Achieved a **100% interception and remediation rate** across CWE-95 (Code Injection), CWE-78 (Command Injection), and CWE-502 (Deserialization).
@@ -35,13 +35,13 @@ An asynchronous distributed system designed for automated Python code synthesis,
   LangGraph, state checkpointing (`AsyncPostgresSaver`), cyclic error-recovery loops, asynchronous interrupt/resume flows (HITL).
 
 * **Runtime Isolation & Security:**  
-  Air-gapped execution environments (Docker/cgroups), static application security testing (Semgrep), AST-level syntax and dependency inspection.
+  Air-gapped execution environments, static application security testing (Semgrep), AST-level syntax and dependency inspection.
 
 * **LLM Evaluation & Benchmarking:**  
-  Evaluation harnesses, Pass@k metrics, regression testing against standard datasets (HumanEval) and adversarial prompts.
+  Evaluation harnesses, Pass@k metrics, regression testing against standard datasets and adversarial prompts.
 
 * **Backend & Distributed Systems:**  
-  Python (AsyncIO), FastAPI, Taskiq, Redis (message broker), PostgreSQL 16 (SQLAlchemy 2.0), Docker Compose.
+  Python (AsyncIO), FastAPI, Taskiq, Redis, PostgreSQL 16 (SQLAlchemy 2.0), Docker Compose.
 
 ---
 
