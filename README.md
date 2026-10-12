@@ -1,5 +1,5 @@
 # Artyom / spbstyle
-**Applied AI Engineer** | Systems, Sandboxing & Agent Orchestration  
+**Applied AI Engineer** / Systems, Sandboxing & Agent Orchestration  
 [Email](spbstyledev@gmail.com) · [Telegram](https://t.me/fiatow)
 
 ---
